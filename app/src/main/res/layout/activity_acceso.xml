@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".AccesoActivity"
     android:orientation="vertical"
     android:gravity="center"
     android:background="@drawable/fondo_acceso"
@@ -49,29 +49,37 @@
                 app:cardCornerRadius="15dp"
                 app:cardBackgroundColor="@color/blanco" >
 
-                <com.google.android.material.textfield.TextInputLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColorHint="@color/gris"
-                    android:layout_marginTop="5dp" >
+                    android:orientation="horizontal"
+                    android:gravity="center" >
 
-                    <EditText
-                        android:id="@+id/etNombreUsuario"
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Nombre de usuario"
-                        android:background="@null"
-                        android:textColor="@color/negro"
                         android:textColorHint="@color/gris"
-                        android:fontFamily="@font/catamaran"
-                        android:inputType="text"
-                        android:textSize="15sp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="10dp" />
+                        android:layout_marginTop="5dp">
 
-                </com.google.android.material.textfield.TextInputLayout>
+                        <EditText
+                            android:id="@+id/etNombreUsuario"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Nombre de usuario"
+                            android:background="@null"
+                            android:textColor="@color/negro"
+                            android:textColorHint="@color/gris"
+                            android:fontFamily="@font/catamaran"
+                            android:inputType="text"
+                            android:textSize="15sp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="10dp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -91,7 +99,7 @@
                     android:layout_marginTop="5dp" >
 
                     <EditText
-                        android:id="@+id/etPassword"
+                        android:id="@+id/etClave"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Contraseña"
@@ -123,6 +131,16 @@
                 android:textColor="@color/negro"
                 android:layout_marginStart="95dp"
                 android:layout_marginEnd="95dp" />
+
+            <TextView
+                android:id="@+id/tvRegistro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Registrarme"
+                android:textSize="15sp"
+                android:textColor="@color/amarillo"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/montserrat" />
 
         </LinearLayout>
 
