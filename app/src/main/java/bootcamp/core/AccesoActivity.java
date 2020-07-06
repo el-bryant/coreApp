@@ -27,12 +27,6 @@ public class AccesoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AccesoActivity.this, RegistroActivity.class);
-
-
-                intent.putExtra("nombres", etNombreUsuario.getText().toString());
-                intent.putExtra("dni", etClave.getText().toString());
-
-
                 startActivity(intent);
                 finish();
             }
@@ -41,7 +35,9 @@ public class AccesoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(AccesoActivity.this, "Bienvenido de nuevo", Toast.LENGTH_SHORT).show();
-                tvRegistro.setVisibility(View.GONE);
+                Intent intent = new Intent(AccesoActivity.this, CategoriaActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
