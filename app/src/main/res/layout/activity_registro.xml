@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/fondo">
+    android:background="@drawable/fondo"
+    android:theme="@style/Material"
+    android:fitsSystemWindows="true" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="15dp" >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/isotipo"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registro de nuevo usuario"
+                android:textColor="@color/amarillo"
+                android:fontFamily="@font/montserrat_bold"
+                android:textSize="20sp" />
+
+        </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -21,204 +48,230 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical" >
-
-                    <ImageView
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/isotipo"
-                        android:layout_margin="30dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Registro de nuevo usuario"
-                        android:textColor="@color/amarillo"
-                        android:fontFamily="@font/montserrat_bold"
-                        android:textSize="20sp" />
-
-                </LinearLayout>
-
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="30dp"
-                    app:cardCornerRadius="25dp">
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginTop="15dp"
+                    app:cardCornerRadius="25dp"
+                    app:cardBackgroundColor="@color/blanco">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginStart="20dp"
                         android:orientation="vertical">
 
-                        <LinearLayout
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilDni"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:hint="DNI"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
-                            android:orientation="horizontal"
-                            android:weightSum="12">
+                            app:boxStrokeColor="@color/gris"
+                            app:boxStrokeWidth="1dp"
+                            app:boxCornerRadiusBottomEnd="20dp"
+                            app:boxCornerRadiusBottomStart="20dp"
+                            app:boxCornerRadiusTopEnd="20dp"
+                            app:boxCornerRadiusTopStart="20dp"
+                            app:hintTextColor="@color/gris"
+                            app:startIconDrawable="@drawable/ic_dni"
+                            app:startIconTint="@color/gris"
+                            app:counterMaxLength="8"
+                            app:counterEnabled="true"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense" >
 
-                            <TextView
-                                android:layout_width="0dp"
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tietDni"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="4"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:text="DNI:"
-                                android:textColor="@color/gris"
-                                android:textSize="18sp" />
-
-                            <EditText
-                                android:id="@+id/etDni"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="8"
                                 android:fontFamily="@font/catamaran_medium"
                                 android:inputType="number"
                                 android:maxLength="8"
-                                android:textColor="@color/negro" />
+                                android:textColor="@color/negro"
+                                android:textCursorDrawable="@color/negro"
+                                android:imeOptions="actionNext" />
 
-                        </LinearLayout>
+                        </com.google.android.material.textfield.TextInputLayout>
 
-                        <LinearLayout
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilApellidos"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:hint="Apellidos"
+                            android:textColorHint="@color/negro"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
-                            android:orientation="horizontal"
-                            android:weightSum="12">
+                            app:boxStrokeColor="@color/gris"
+                            app:boxStrokeWidth="1dp"
+                            app:boxCornerRadiusBottomEnd="20dp"
+                            app:boxCornerRadiusBottomStart="20dp"
+                            app:boxCornerRadiusTopEnd="20dp"
+                            app:boxCornerRadiusTopStart="20dp"
+                            app:hintTextColor="@color/gris"
+                            app:helperText=" "
+                            app:startIconDrawable="@drawable/ic_perfil"
+                            app:startIconTint="@color/gris"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense" >
 
-                            <TextView
-                                android:layout_width="0dp"
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tietApellidos"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="4"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:text="Apellidos:"
-                                android:textColor="@color/gris"
-                                android:textSize="18sp" />
-
-                            <EditText
-                                android:id="@+id/etApellidos"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="8"
                                 android:fontFamily="@font/catamaran_medium"
                                 android:inputType="textPersonName"
-                                android:textColor="@color/negro" />
+                                android:maxLength="30"
+                                android:textColor="@color/negro"
+                                android:textCursorDrawable="@color/negro"
+                                android:imeOptions="actionNext"/>
 
-                        </LinearLayout>
+                        </com.google.android.material.textfield.TextInputLayout>
 
-                        <LinearLayout
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilNombres"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:weightSum="12">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="4"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:text="Nombres:"
-                                android:textColor="@color/gris"
-                                android:textSize="18sp" />
-
-                            <EditText
-                                android:id="@+id/etNombres"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="8"
-                                android:fontFamily="@font/catamaran_medium"
-                                android:inputType="textPersonName"
-                                android:textColor="@color/negro" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:hint="Nombres"
+                            android:textColorHint="@color/negro"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
-                            android:orientation="horizontal"
-                            android:weightSum="12">
+                            app:boxStrokeColor="@color/gris"
+                            app:boxStrokeWidth="1dp"
+                            app:boxCornerRadiusBottomEnd="20dp"
+                            app:boxCornerRadiusBottomStart="20dp"
+                            app:boxCornerRadiusTopEnd="20dp"
+                            app:boxCornerRadiusTopStart="20dp"
+                            app:hintTextColor="@color/gris"
+                            app:helperText=" "
+                            app:startIconDrawable="@drawable/ic_perfil"
+                            app:startIconTint="@color/gris"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense" >
 
-                            <TextView
-                                android:layout_width="0dp"
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tietNombres"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="4"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:text="Celular:"
-                                android:textColor="@color/gris"
-                                android:textSize="18sp" />
+                                android:fontFamily="@font/catamaran_medium"
+                                android:inputType="textPersonName"
+                                android:maxLength="30"
+                                android:textColor="@color/negro"
+                                android:textCursorDrawable="@color/negro"
+                                android:imeOptions="actionNext" />
 
-                            <EditText
-                                android:layout_width="0dp"
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilCelular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:hint="Celular"
+                            android:textColorHint="@color/negro"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:boxStrokeColor="@color/gris"
+                            app:boxStrokeWidth="1dp"
+                            app:boxCornerRadiusBottomEnd="20dp"
+                            app:boxCornerRadiusBottomStart="20dp"
+                            app:boxCornerRadiusTopEnd="20dp"
+                            app:boxCornerRadiusTopStart="20dp"
+                            app:hintTextColor="@color/gris"
+                            app:helperText=" "
+                            app:startIconDrawable="@drawable/ic_celular"
+                            app:startIconTint="@color/gris"
+                            app:counterMaxLength="9"
+                            app:counterEnabled="true"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense" >
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tietCelular"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="8"
                                 android:fontFamily="@font/catamaran_medium"
                                 android:inputType="phone"
                                 android:maxLength="9"
-                                android:textColor="@color/negro" />
+                                android:textColor="@color/negro"
+                                android:textCursorDrawable="@color/negro"
+                                android:imeOptions="actionNext" />
 
-                        </LinearLayout>
+                        </com.google.android.material.textfield.TextInputLayout>
 
-                        <LinearLayout
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilCorreo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:hint="Correo"
+                            android:textColorHint="@color/negro"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
-                            android:orientation="horizontal"
-                            android:weightSum="12">
+                            app:boxStrokeColor="@color/gris"
+                            app:boxStrokeWidth="1dp"
+                            app:boxCornerRadiusBottomEnd="20dp"
+                            app:boxCornerRadiusBottomStart="20dp"
+                            app:boxCornerRadiusTopEnd="20dp"
+                            app:boxCornerRadiusTopStart="20dp"
+                            app:hintTextColor="@color/gris"
+                            app:helperText=" "
+                            app:startIconDrawable="@drawable/ic_correo"
+                            app:startIconTint="@color/gris"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense" >
 
-                            <TextView
-                                android:layout_width="0dp"
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tietCorreo"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="4"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:text="Correo:"
-                                android:textColor="@color/gris"
-                                android:textSize="18sp" />
-
-                            <EditText
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="8"
                                 android:fontFamily="@font/catamaran_medium"
                                 android:inputType="textEmailAddress"
-                                android:textColor="@color/negro" />
+                                android:maxLength="50"
+                                android:textColor="@color/negro"
+                                android:textCursorDrawable="@color/negro"
+                                android:imeOptions="actionNext" />
 
-                        </LinearLayout>
+                        </com.google.android.material.textfield.TextInputLayout>
 
-                        <LinearLayout
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilDireccion"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:hint="Dirección"
+                            android:textColorHint="@color/negro"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
-                            android:orientation="horizontal"
-                            android:weightSum="12">
+                            app:boxStrokeColor="@color/gris"
+                            app:boxStrokeWidth="1dp"
+                            app:boxCornerRadiusBottomEnd="20dp"
+                            app:boxCornerRadiusBottomStart="20dp"
+                            app:boxCornerRadiusTopEnd="20dp"
+                            app:boxCornerRadiusTopStart="20dp"
+                            app:hintTextColor="@color/gris"
+                            app:helperText=" "
+                            app:startIconDrawable="@drawable/ic_home"
+                            app:startIconTint="@color/gris"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense" >
 
-                            <TextView
-                                android:layout_width="0dp"
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tietDireccion"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="4"
-                                android:fontFamily="@font/montserrat_bold"
-                                android:text="Dirección:"
-                                android:textColor="@color/gris"
-                                android:textSize="18sp" />
-
-                            <EditText
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="8"
                                 android:fontFamily="@font/catamaran_medium"
-                                android:inputType="textMultiLine"
-                                android:textColor="@color/negro" />
+                                android:inputType="textLongMessage"
+                                android:maxLength="200"
+                                android:textColor="@color/negro"
+                                android:textCursorDrawable="@color/negro"
+                                android:imeOptions="actionDone" />
 
-                        </LinearLayout>
+                        </com.google.android.material.textfield.TextInputLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -234,17 +287,19 @@
                                 android:textSize="15sp"
                                 android:text="Acepto los "
                                 android:textColor="@color/negro"
-                                android:fontFamily="@font/catamaran_light" />
+                                android:fontFamily="@font/catamaran_light"
+                                android:buttonTint="@color/negro"/>
 
-                            <EditText
+                            <TextView
                                 android:id="@+id/tvTerminos"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="términos y condiciones"
+                                android:text="@string/t_rminos_y_condiciones"
                                 android:textColor="@color/gris"
                                 android:textSize="15sp"
                                 android:fontFamily="@font/catamaran_light"
-                                android:editable="false" />
+                                android:inputType="none"
+                                android:focusable="false" />
 
                         </LinearLayout>
 

@@ -10,8 +10,8 @@
     android:background="@drawable/fondo">
 
     <ImageView
-        android:layout_width="180dp"
-        android:layout_height="180dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:src="@drawable/isotipo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,17 +50,33 @@
 
         </LinearLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent" >-->
 
-            <com.hitomi.cmlibrary.CircleMenu
-                android:id="@+id/cmCategoria"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+<!--            <com.hitomi.cmlibrary.CircleMenu-->
+<!--                android:id="@+id/cmCategoria"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent" />-->
 
-        </RelativeLayout>
+<!--        </RelativeLayout>-->
 
     </LinearLayout>
+
+    <github.hellocsl.cursorwheel.CursorWheelLayout
+        android:id="@+id/wheel_image"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        app:wheelBackgroundColor="#0010131a"
+        app:wheelCursorColor="@color/amarillo"
+        app:wheelCursorHeight="20dp"
+        app:wheelItemRotateMode="none"
+        app:wheelSelectedAngle="310"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+    </github.hellocsl.cursorwheel.CursorWheelLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
