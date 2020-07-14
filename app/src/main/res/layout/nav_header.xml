@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="200dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/isotipo_recortado"
+        android:tint="@color/negro"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:scaleType="fitEnd"/>
+
+    <ImageView
+        android:id="@+id/civFotoPerfil"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/redondo_negro"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="25dp"
+        android:src="@drawable/ic_perfil"
+        android:tint="@color/blanco"
+        android:padding="15dp" />
+
+    <TextView
+        android:id="@+id/tvNombres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/civFotoPerfil"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/catamaran_bold"
+        android:text="Nombre del usuario"
+        android:textColor="@color/negro"
+        android:textSize="18sp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/negro"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp" />
+
+</RelativeLayout>

@@ -13,4 +13,13 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Menus" parent="AppTheme" >
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="TranslucentStatusBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
 </resources>

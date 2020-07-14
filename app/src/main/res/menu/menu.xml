@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_inicio"
+        android:title="Inicio"
+        android:icon="@drawable/ic_home" />
+
+    <item
+        android:id="@+id/nav_perfil"
+        android:title="Mi perfil"
+        android:icon="@drawable/ic_perfil" />
+
+    <item
+        android:id="@+id/nav_bootcamp"
+        android:title="Mi dojo"
+        android:icon="@drawable/ic_dojo" />
+
+</menu>

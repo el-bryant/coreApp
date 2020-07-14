@@ -3,6 +3,7 @@ package bootcamp.core;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -26,6 +27,7 @@ public class RegistroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         btnRegistro = (Button) findViewById(R.id.btnRegistrarme);
         chkTerminos = (CheckBox) findViewById(R.id.chkTerminos);
         tvTerminos = (TextView) findViewById(R.id.tvTerminos);

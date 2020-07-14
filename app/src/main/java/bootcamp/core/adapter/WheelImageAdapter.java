@@ -3,10 +3,10 @@ package bootcamp.core.adapter;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import java.util.List;
 import bootcamp.core.R;
 import bootcamp.core.data.ImageData;
-import de.hdodenhof.circleimageview.CircleImageView;
 import github.hellocsl.cursorwheel.CursorWheelLayout;
 
 public class WheelImageAdapter extends CursorWheelLayout.CycleWheelAdapter {
@@ -30,7 +30,7 @@ public class WheelImageAdapter extends CursorWheelLayout.CycleWheelAdapter {
     public View getView(View parent, int position) {
         ImageData data = getItem(position);
         View root = inflater.inflate(R.layout.wheel_image_layout, null, false);
-        CircleImageView imageView = (CircleImageView) root.findViewById(R.id.wheel_menu_item_iv);
+        ImageView imageView = (ImageView) root.findViewById(R.id.wheel_menu_item_iv);
         imageView.setImageResource(data.imageResource);
         return root;
     }
