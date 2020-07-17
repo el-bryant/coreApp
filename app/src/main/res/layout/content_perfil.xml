@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PerfilActivity"
-    android:background="@drawable/fondo" >
+    android:background="@drawable/fondo"
+    android:fitsSystemWindows="true" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -92,14 +93,27 @@
                                 android:textColor="@color/negro"
                                 android:textSize="15sp"/>
 
+                            <TextView
+                                android:id="@+id/tvNombres"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="8"
+                                android:text="Bryant Alejandro"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/catamaran_extralight"
+                                android:visibility="visible"
+                                android:textColor="@color/negro" />
+
                             <EditText
+                                android:id="@+id/etNombres"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="8"
                                 android:background="@null"
-                                android:text="Aquí los nombres"
                                 android:textSize="15sp"
-                                android:fontFamily="@font/catamaran_medium"/>
+                                android:fontFamily="@font/catamaran_extralight"
+                                android:visibility="gone"
+                                android:textColor="@color/negro" />
 
                         </LinearLayout>
 
@@ -122,14 +136,48 @@
                                 android:textColor="@color/negro"
                                 android:textSize="15sp"/>
 
-                            <EditText
+                            <TextView
+                                android:id="@+id/tvApellidoPaterno"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="8"
-                                android:background="@null"
-                                android:text="Aquí los apellidos"
+                                android:layout_weight="4"
+                                android:textColor="@color/negro"
+                                android:fontFamily="@font/catamaran_extralight"
                                 android:textSize="15sp"
-                                android:fontFamily="@font/catamaran_medium"/>
+                                android:text="Yacila" />
+
+                            <EditText
+                                android:id="@+id/etApellidoPaterno"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:background="@null"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/catamaran_extralight"
+                                android:textColor="@color/negro"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/tvApellidoMaterno"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:textColor="@color/negro"
+                                android:fontFamily="@font/catamaran_extralight"
+                                android:textSize="15sp"
+                                android:text="Valenzuela" />
+
+                            <EditText
+                                android:id="@+id/etApellidoMaterno"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:background="@null"
+                                android:text="Valenzuela"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/catamaran_extralight"
+                                android:textColor="@color/negro"
+                                android:visibility="gone" />
 
                         </LinearLayout>
 
@@ -152,14 +200,26 @@
                                 android:textColor="@color/negro"
                                 android:textSize="15sp"/>
 
+                            <TextView
+                                android:id="@+id/tvCelular"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="8"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/catamaran_extralight"
+                                android:textColor="@color/negro"
+                                android:text="936 794 594" />
+
                             <EditText
+                                android:id="@+id/etCelular"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="8"
                                 android:background="@null"
-                                android:text="999 999 999"
                                 android:textSize="15sp"
-                                android:fontFamily="@font/catamaran_medium"/>
+                                android:fontFamily="@font/catamaran_extralight"
+                                android:textColor="@color/negro"
+                                android:visibility="gone" />
 
                         </LinearLayout>
 
@@ -175,21 +235,34 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="Coreo:"
+                                android:text="Correo:"
                                 android:layout_weight="4"
                                 android:fontFamily="@font/montserrat"
                                 android:textStyle="bold"
                                 android:textColor="@color/negro"
                                 android:textSize="15sp"/>
 
+                            <TextView
+                                android:id="@+id/tvCorreo"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="bry.y.valen@gmail.com"
+                                android:layout_weight="8"
+                                android:fontFamily="@font/catamaran_extralight"
+                                android:textColor="@color/negro"
+                                android:textSize="15sp" />
+
+
                             <EditText
+                                android:id="@+id/etCorreo"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="8"
                                 android:background="@null"
-                                android:text="un.correo@gmail.com"
                                 android:textSize="15sp"
-                                android:fontFamily="@font/catamaran_medium"/>
+                                android:fontFamily="@font/catamaran_extralight"
+                                android:textColor="@color/negro"
+                                android:visibility="gone" />
 
                         </LinearLayout>
 
@@ -212,14 +285,27 @@
                                 android:textColor="@color/negro"
                                 android:textSize="15sp"/>
 
+                            <TextView
+                                android:id="@+id/tvDireccion"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Fundo San Andrés S/N - Pimentel"
+                                android:layout_weight="8"
+                                android:textColor="@color/negro"
+                                android:textSize="15sp"
+                                android:fontFamily="@font/catamaran_extralight" />
+
+
                             <EditText
+                                android:id="@+id/etDireccion"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="8"
                                 android:background="@null"
-                                android:text="Aquí la dirección"
                                 android:textSize="15sp"
-                                android:fontFamily="@font/catamaran_medium"/>
+                                android:fontFamily="@font/catamaran_extralight"
+                                android:textColor="@color/negro"
+                                android:visibility="gone" />
 
                         </LinearLayout>
 
@@ -234,6 +320,7 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/ivEditar"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/ic_edit"
@@ -242,6 +329,20 @@
         android:padding="10dp"
         android:layout_marginBottom="60dp"
         android:layout_marginEnd="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivGuardar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_done"
+        android:background="@drawable/redondo_amarillo"
+        android:tint="@color/negro"
+        android:padding="10dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="60dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -255,5 +356,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="15dp" />
+
+    <FrameLayout
+        android:id="@+id/flayCargando"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#9010131a"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/amarillo" />
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

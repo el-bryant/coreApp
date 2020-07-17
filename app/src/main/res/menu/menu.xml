@@ -17,4 +17,10 @@
         android:title="Mi dojo"
         android:icon="@drawable/ic_dojo" />
 
+    <item
+        android:id="@+id/nav_informacion"
+        android:title="Acerca de"
+        android:icon="@drawable/ic_info" />
+
 </menu>
+

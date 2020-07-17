@@ -240,6 +240,43 @@
                         </com.google.android.material.textfield.TextInputLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilClave"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:hint="Contraseña"
+                            android:textColorHint="@color/negro"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:boxStrokeColor="@color/gris"
+                            app:boxStrokeWidth="1dp"
+                            app:boxCornerRadiusBottomEnd="20dp"
+                            app:boxCornerRadiusBottomStart="20dp"
+                            app:boxCornerRadiusTopEnd="20dp"
+                            app:boxCornerRadiusTopStart="20dp"
+                            app:hintTextColor="@color/gris"
+                            app:helperText=" "
+                            app:startIconDrawable="@drawable/ic_candado"
+                            app:startIconTint="@color/gris"
+                            app:passwordToggleDrawable="@drawable/show_password_selector"
+                            app:passwordToggleEnabled="true"
+                            app:passwordToggleTint="@color/gris"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense" >
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tietClave"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/catamaran_medium"
+                                android:inputType="textPassword"
+                                android:maxLength="50"
+                                android:textColor="@color/negro"
+                                android:textCursorDrawable="@color/negro"
+                                android:imeOptions="actionNext" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
                             android:id="@+id/tilDireccion"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -359,13 +396,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="xmlns:androidhttp://schemas.android.com/apk/res/android
-    xmlns:app=http://schemas.android.com/apk/res-auto
-    xmlns:tools=http://schemas.android.com/tools
-    android:layout_width=match_parent
-    android:layout_height=match_parent
-    tools:context=.TerminosActivity
-    android:background=@drawable/fondo_acceso >" />
+                        android:text="Aquí pondremos la política de privacidad y los términos y condiciones" />
 
                     <Button
                         android:id="@+id/btnAceptar"
@@ -386,5 +417,21 @@
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/flayCargando"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#9010131a"
+        android:visibility="gone" >
+
+        <ProgressBar
+            android:id="@+id/pbCargando"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/amarillo" />
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

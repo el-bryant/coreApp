@@ -25,9 +25,7 @@
         app:menu="@menu/menu"
         app:itemIconTint="@color/gris"
         app:itemTextColor="@color/negro"
-        app:itemIconPadding="15dp"
-        android:elevation="100dp"
-        app:elevation="100dp" >
+        app:itemIconPadding="15dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
