@@ -13,15 +13,16 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.material.navigation.NavigationView;
 import org.json.JSONArray;
 import java.util.ArrayList;
 import bootcamp.core.adapter.WheelImageAdapter;
 import bootcamp.core.entity.Bootcamp;
+import bootcamp.core.publico.PrefUtil;
 import github.hellocsl.cursorwheel.CursorWheelLayout;
 import static bootcamp.core.publico.Funciones.primero;
 import static bootcamp.core.publico.Funciones.segundo;
@@ -32,13 +33,16 @@ public class CategoriaActivity extends AppCompatActivity implements CursorWheelL
     DrawerLayout drawer;
     ImageView ivMenu;
     NavigationView nvMenu;
+    PrefUtil prefUtil;
     TextView tvDescripcion, tvNombreBootcamp;
+    LinearLayout llayCerrarSesion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categoria);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        prefUtil = new PrefUtil(CategoriaActivity.this);
         initComponents();
         cargarBootcamps();
         ivMenu.setOnClickListener(new View.OnClickListener() {
@@ -72,11 +76,21 @@ public class CategoriaActivity extends AppCompatActivity implements CursorWheelL
             public void afterTextChanged(Editable editable) {
             }
         });
+        llayCerrarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                prefUtil.clearAll();
+                Intent intent = new Intent(CategoriaActivity.this, AccesoActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     public void initComponents() {
         drawer = (DrawerLayout) findViewById(R.id.dlMenu);
         ivMenu = (ImageView) findViewById(R.id.ivMenu);
+        llayCerrarSesion = (LinearLayout) findViewById(R.id.llayCerrarSesion);
         nvMenu = (NavigationView) findViewById(R.id.nvMenu);
         tvDescripcion = (TextView) findViewById(R.id.tvDescripcion);
         tvNombreBootcamp = (TextView) findViewById(R.id.tvNombreBootcamp);
@@ -155,6 +169,10 @@ public class CategoriaActivity extends AppCompatActivity implements CursorWheelL
                 intent = new Intent(CategoriaActivity.this, PerfilActivity.class);
                 startActivity(intent);
                 finish();
+                break;
+            case R.id.nav_informacion:
+                intent = new Intent(CategoriaActivity.this, DetallesActivity.class);
+                startActivity(intent);
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

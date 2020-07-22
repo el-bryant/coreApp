@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/nav_detalles"
+        android:title="Detalles"
+        android:icon="@drawable/ic_mostrar" />
+
+    <item
+        android:id="@+id/nav_entrenador"
+        android:title="Entrenador"
+        android:icon="@drawable/ic_perfil" />
+
+</menu>
