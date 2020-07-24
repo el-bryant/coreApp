@@ -14,9 +14,12 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.andexert.library.RippleView;
 import com.google.android.material.navigation.NavigationView;
 import org.json.JSONArray;
 import java.util.ArrayList;
@@ -29,11 +32,14 @@ import static bootcamp.core.publico.Funciones.segundo;
 
 public class CategoriaActivity extends AppCompatActivity implements CursorWheelLayout.OnMenuSelectedListener, NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     ArrayList<Bootcamp> lstImage;
+    Button btnMasInformacion;
     CursorWheelLayout wheel_image;
     DrawerLayout drawer;
     ImageView ivMenu;
     NavigationView nvMenu;
     PrefUtil prefUtil;
+    RippleView rpvMasInformacion;
+    static String idBootcamp = "";
     TextView tvDescripcion, tvNombreBootcamp;
     LinearLayout llayCerrarSesion;
 
@@ -44,14 +50,8 @@ public class CategoriaActivity extends AppCompatActivity implements CursorWheelL
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         prefUtil = new PrefUtil(CategoriaActivity.this);
         initComponents();
+        initListener();
         cargarBootcamps();
-        ivMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawer.openDrawer(GravityCompat.START);
-            }
-        });
-        nvMenu.setNavigationItemSelectedListener(this);
         tvDescripcion.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -71,30 +71,38 @@ public class CategoriaActivity extends AppCompatActivity implements CursorWheelL
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 animacion(tvNombreBootcamp);
+                btnMasInformacion.setVisibility(View.VISIBLE);
+
             }
             @Override
             public void afterTextChanged(Editable editable) {
             }
         });
-        llayCerrarSesion.setOnClickListener(new View.OnClickListener() {
+        rpvMasInformacion.setOnRippleCompleteListener(new RippleView.OnRippleCompleteListener() {
             @Override
-            public void onClick(View view) {
-                prefUtil.clearAll();
-                Intent intent = new Intent(CategoriaActivity.this, AccesoActivity.class);
-                startActivity(intent);
-                finish();
+            public void onComplete(RippleView rippleView) {
+                Log.d("CategoriaActivity", "rpvMasInformacion completed");
             }
         });
     }
 
     public void initComponents() {
+        btnMasInformacion = (Button) findViewById(R.id.btnMasInformacion);
         drawer = (DrawerLayout) findViewById(R.id.dlMenu);
         ivMenu = (ImageView) findViewById(R.id.ivMenu);
         llayCerrarSesion = (LinearLayout) findViewById(R.id.llayCerrarSesion);
         nvMenu = (NavigationView) findViewById(R.id.nvMenu);
+        rpvMasInformacion = (RippleView) findViewById(R.id.rpvmasInformacion);
         tvDescripcion = (TextView) findViewById(R.id.tvDescripcion);
         tvNombreBootcamp = (TextView) findViewById(R.id.tvNombreBootcamp);
         wheel_image = (CursorWheelLayout) findViewById(R.id.wheel_image);
+    }
+
+    public void initListener() {
+        btnMasInformacion.setOnClickListener(this);
+        ivMenu.setOnClickListener(this);
+        llayCerrarSesion.setOnClickListener(this);
+        nvMenu.setNavigationItemSelectedListener(this);
     }
 
     public void cargarBootcamps() {
@@ -114,7 +122,7 @@ public class CategoriaActivity extends AppCompatActivity implements CursorWheelL
                                 JSONArray jsonArray = new JSONArray(result);
                                 if (jsonArray.length() > 0) {
                                     for (int i = 0; i < jsonArray.length(); i++) {
-                                        String idBootcamp = jsonArray.getJSONObject(i).getString("id_bootcamp");
+                                        idBootcamp = jsonArray.getJSONObject(i).getString("id_bootcamp");
                                         String nombre = jsonArray.getJSONObject(i).getString("nombre");
                                         String descripcion = jsonArray.getJSONObject(i).getString("descripcion");
                                         String icono = jsonArray.getJSONObject(i).getString("icono");
@@ -171,7 +179,7 @@ public class CategoriaActivity extends AppCompatActivity implements CursorWheelL
                 finish();
                 break;
             case R.id.nav_informacion:
-                intent = new Intent(CategoriaActivity.this, DetallesActivity.class);
+                intent = new Intent(CategoriaActivity.this, ContenidosActivity.class);
                 startActivity(intent);
                 break;
         }
@@ -190,8 +198,22 @@ public class CategoriaActivity extends AppCompatActivity implements CursorWheelL
 
     @Override
     public void onClick(View view) {
+        Intent intent;
         switch (view.getId()) {
+            case R.id.btnMasInformacion:
+                intent = new Intent(CategoriaActivity.this, ContenidosActivity.class);
+                intent.putExtra("id_bootcamp", idBootcamp);
+                startActivity(intent);
+                finish();
+                break;
             case R.id.ivMenu:
+                drawer.openDrawer(GravityCompat.START);
+                break;
+            case R.id.llayCerrarSesion:
+                prefUtil.clearAll();
+                intent = new Intent(CategoriaActivity.this, AccesoActivity.class);
+                startActivity(intent);
+                finish();
                 break;
         }
     }

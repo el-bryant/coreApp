@@ -15,6 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -243,5 +245,35 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
             }
         };
         tr.start();
+    }
+
+    //guardar datos para persistencia (evitar que se pierdan)
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        String dni = tietDni.getText().toString();
+        String apellidos = tietApellidos.getText().toString();
+        String nombres = tietNombres.getText().toString();
+        String celular = tietCelular.getText().toString();
+        String correo = tietCorreo.getText().toString();
+        String direccion = tietDireccion.getText().toString();
+        outState.putString("dni", dni);
+        outState.putString("apellidos", apellidos);
+        outState.putString("nombres", nombres);
+        outState.putString("celular", celular);
+        outState.putString("correo", correo);
+        outState.putString("direccion", direccion);
+    }
+
+    //recuperar datos de persistencia (evitar que se pierdan)
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        tietDni.setText(savedInstanceState.getString("dni"));
+        tietApellidos.setText(savedInstanceState.getString("apellidos"));
+        tietNombres.setText(savedInstanceState.getString("nombres"));
+        tietCelular.setText(savedInstanceState.getString("celular"));
+        tietCorreo.setText(savedInstanceState.getString("correo"));
+        tietDireccion.setText(savedInstanceState.getString("direccion"));
     }
 }

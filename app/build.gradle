@@ -33,8 +33,9 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'com.github.Mursaat:AnimatedGradientTextView:v0.0.6' //texto con degradado_amna
-    implementation 'com.github.Hitomis:CircleMenu:v1.1.0' //menu rueda
-    implementation 'github.hellocsl:CursorWheelLayout:1.1.0'
+    implementation 'github.hellocsl:CursorWheelLayout:1.1.0' //menú rueda
+    implementation 'com.github.emanzanoaxa:RippleEffect:52ea2a0ab6' //efecto del click
+    implementation 'com.github.smhdk:KM-Recyclerview-Sticky-Header:v1.0.0' //cabeceras de recyclerview
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

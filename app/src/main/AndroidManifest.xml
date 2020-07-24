@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetallesActivity" />
+        <activity android:name=".ContenidosActivity" />
         <activity android:name=".PerfilActivity" />
         <activity
             android:name=".AccesoActivity"
